@@ -203,6 +203,42 @@
 
   footer{border-top:1px solid var(--line);padding:2.2rem 0;margin-top:2rem;color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.06em}
   .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;justify-content:space-between;align-items:center;text-transform:uppercase}
+
+  /* ===== responsive refinements ===== */
+  html{font-size:16.5px}
+  .wrap{max-width:1440px}
+  .logo{white-space:nowrap;flex-shrink:0;font-size:1.25rem}
+  .sec-intro{font-size:1.08rem;max-width:60ch}
+  .track h3{font-size:1.6rem}
+  .track p{font-size:1rem}
+  h1{font-size:clamp(2.3rem,5.5vw,4.2rem)}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.8rem)}
+  .prose p{font-size:1.06rem}
+  .gal{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+
+  /* text + photo layout so About/Contact don't gape empty */
+  .pagegrid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;margin-top:1.6rem}
+  .pagephoto{aspect-ratio:4/5;min-height:360px;border:1px solid var(--line)}
+
+  /* mobile menu (hamburger) so the name isn't cramped */
+  .menu-btn{display:none;background:transparent;border:1px solid var(--line2);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1.1rem;font-family:var(--sans);align-items:center;justify-content:center}
+  @media(max-width:860px){
+    .menu-btn{display:flex}
+    nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(12,17,22,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:.4rem 0;display:none}
+    header.open nav{display:flex}
+    nav a{padding:.95rem clamp(1.1rem,4vw,3rem);font-size:.84rem;border-bottom:0}
+    nav a[data-view="hem"]{display:block}
+    .langs{margin-left:auto}
+    .pagegrid{grid-template-columns:1fr}
+    .pagephoto{aspect-ratio:16/10;min-height:0}
+  }
+  @media(max-width:680px){
+    .hero{height:64vh;min-height:400px}
+    .hero h1{font-size:clamp(2.5rem,9vw,3.3rem);max-width:100%}
+    .hero p{font-size:1.02rem;max-width:100%}
+    .tracks{margin-top:2rem}
+  }
 </style>
 </head>
 <body>
@@ -218,6 +254,7 @@
     </nav>
     <div class="langs"><button data-lang="sv" aria-label="Svenska">🇸🇪</button><button data-lang="en" class="on" aria-label="English">🇬🇧</button></div>
     <button class="cart-btn" id="cartBtn" aria-label="Cart">◇<span class="cart-badge" id="badge"></span></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
   </div></header>
 
   <main>
@@ -273,12 +310,20 @@
     <!-- PRODUCT DETAIL -->
     <div class="view" id="view-produkt"><section class="wrap"><span class="pback" id="pback" data-i18n="back">← Back</span><div id="pdetail"></div></section></div>
 
-    <div class="view" id="view-om"><section class="wrap"><h1 data-i18n="about_title">About</h1><div class="prose" id="aboutProse"></div></section></div>
+    <div class="view" id="view-om"><section class="wrap"><h1 data-i18n="about_title">About</h1>
+      <div class="pagegrid">
+        <div class="prose" id="aboutProse"></div>
+        <div class="pagephoto photo"><div class="scene" style="background-image:radial-gradient(85% 75% at 50% 40%,#e7e4dd,#b9b3a8 55%,#4f4a43)"></div><div class="grain"></div><div class="vig"></div><span class="fmt">6×6</span></div>
+      </div>
+    </section></div>
     <div class="view" id="view-villkor"><section class="wrap"><h1 data-i18n="terms_title">Terms, shipping &amp; returns</h1><div class="prose" id="termsProse"></div></section></div>
     <div class="view" id="view-kontakt"><section class="wrap">
       <h1 data-i18n="contact_title">Contact</h1>
       <div class="sec-intro" data-i18n="contact_intro">Questions about a picture, a licence or an exhibition? Get in touch.</div>
-      <div class="contact-card"><div class="row">Helsingborg · Skåne · Sweden</div><div class="row"><a href="mailto:hej@martinbjorck.se">hej@martinbjorck.se</a></div><div class="row"><a href="#">@martinbjorck</a> · <a href="https://www.etsy.com/shop/MartinBjorck" target="_blank" rel="noopener">Etsy ↗</a></div></div>
+      <div class="pagegrid">
+        <div class="contact-card"><div class="row">Helsingborg · Skåne · Sweden</div><div class="row"><a href="mailto:hej@martinbjorck.se">hej@martinbjorck.se</a></div><div class="row"><a href="#">@martinbjorck</a> · <a href="https://www.etsy.com/shop/MartinBjorck" target="_blank" rel="noopener">Etsy ↗</a></div></div>
+        <div class="pagephoto photo"><div class="scene" style="background-image:linear-gradient(160deg,#d7d3cc,#a7a199 55%,#3f3b35)"></div><div class="grain"></div><div class="vig"></div><span class="fmt">6×6</span></div>
+      </div>
     </section></div>
   </main>
 
@@ -398,8 +443,10 @@ const minPrice=a=>Math.min(...SIZES.map(s=>s.p));
 
 function show(v){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='view-'+v));
   document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===v));
-  window.scrollTo({top:0,behavior:'smooth'});if(v!=='produkt')location.hash=v;}
+  window.scrollTo({top:0,behavior:'smooth'});if(v!=='produkt')location.hash=v;
+  document.querySelector('header').classList.remove('open');}
 document.body.addEventListener('click',e=>{const el=e.target.closest('[data-view]');if(el){show(el.dataset.view);}});
+document.getElementById('menuBtn').addEventListener('click',()=>document.querySelector('header').classList.toggle('open'));
 
 function applyLang(){document.documentElement.lang=lang;
   document.querySelectorAll('[data-i18n]').forEach(el=>{const v=L()[el.dataset.i18n];if(v!=null)el.innerHTML=v;});
