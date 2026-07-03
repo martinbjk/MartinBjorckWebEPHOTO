@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martin Björck — Scandinavian Coastal Photography</title>
+<meta name="description" content="Analogue black & white photography of the Scandinavian coast — Skåne, the Swedish west coast and the Nordic shore. Signed silver-gelatin prints, shipped worldwide. Digital downloads on Etsy.">
+<link rel="canonical" href="https://martinbjk.github.io/MartinBjorckPhotos/">
+<link rel="alternate" hreflang="en" href="https://martinbjk.github.io/MartinBjorckPhotos/?lang=en">
+<link rel="alternate" hreflang="sv" href="https://martinbjk.github.io/MartinBjorckPhotos/?lang=sv">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Martin Björck — Scandinavian Coastal Photography">
+<meta property="og:description" content="Analogue black & white prints of the Nordic coast. Signed silver-gelatin originals, shipped worldwide.">
+<meta property="og:locale" content="en_GB"><meta property="og:locale:alternate" content="sv_SE">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Martin Björck","jobTitle":"Photographer",
+"url":"https://martinbjk.github.io/MartinBjorckPhotos/",
+"address":{"@type":"PostalAddress","addressLocality":"Helsingborg","addressRegion":"Skåne","addressCountry":"SE"},
+"knowsAbout":["Scandinavian photography","Black and white","Darkroom","Medium format 6x6","Nordic coast","Silver gelatin prints"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c1116;--bg2:#0f151b;--surf:#141b22;--surf2:#192129;
+    --line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.16);
+    --text:#e2e6e8;--muted:#8b979d;--dim:#67737a;
+    --accent:#86abbd;--accent-d:#6b8f9f;
+    --serif:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',monospace;--sans:'Inter',system-ui,sans-serif;
+    --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);font-weight:300;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem)}
+  .eyebrow{font-family:var(--mono);font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent)}
+
+  header{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(12,17,22,.72);border-bottom:1px solid var(--line)}
+  .hbar{display:flex;align-items:center;gap:1.3rem;height:66px}
+  .logo{font-family:var(--serif);font-weight:400;font-size:1.15rem;letter-spacing:.02em;cursor:pointer}
+  nav{display:flex;gap:1.3rem;margin-left:auto;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+  nav a{color:var(--muted);cursor:pointer;padding:.3em 0;border-bottom:1px solid transparent;transition:.25s}
+  nav a:hover,nav a.active{color:var(--text);border-color:var(--accent)}
+  .langs{display:flex;gap:.4rem}
+  .langs button{background:transparent;border:0;cursor:pointer;font-size:.95rem;opacity:.45;filter:grayscale(.5);transition:.2s}
+  .langs button.on{opacity:1;filter:none}
+  .cart-btn{position:relative;background:transparent;border:1px solid var(--line2);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-family:var(--mono);font-size:.78rem}
+  .cart-btn:hover{border-color:var(--accent)}
+  .cart-badge{position:absolute;top:-6px;right:-6px;background:var(--accent);color:#0c1116;font-family:var(--mono);font-size:.6rem;min-width:17px;height:17px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px}
+  .cart-badge:empty{display:none}
+  @media(max-width:680px){nav{gap:.85rem;font-size:.62rem}nav a[data-view="hem"]{display:none}}
+
+  .view{display:none}.view.on{display:block;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  section{padding:clamp(2.5rem,6vw,4.5rem) 0}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.05;color:#fff}
+  h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,4vw,2.3rem);color:#fff}
+  .sec-intro{color:var(--muted);max-width:56ch;margin-top:.7rem;font-size:1rem}
+
+  .photo{position:relative;overflow:hidden;background:#1a1f24}
+  .photo .scene{position:absolute;inset:0;background-size:cover;filter:grayscale(1) contrast(1.04)}
+  .photo .grain{position:absolute;inset:0;background:var(--grain);background-size:120px;mix-blend-mode:overlay;opacity:.45}
+  .photo .vig{position:absolute;inset:0;box-shadow:inset 0 0 90px rgba(0,0,0,.5)}
+  .photo .fmt{position:absolute;right:9px;top:8px;font-family:var(--mono);font-size:.54rem;letter-spacing:.16em;color:rgba(255,255,255,.5)}
+
+  .hero{position:relative;height:min(86vh,760px);min-height:460px;display:flex;align-items:flex-end;overflow:hidden}
+  .hero .photo{position:absolute;inset:0}
+  .hero .scene{filter:grayscale(1) contrast(1.05) brightness(.9)}
+  .hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,17,22,.25),transparent 30%,rgba(12,17,22,.78))}
+  .hero-inner{position:relative;z-index:2;padding-bottom:clamp(2.5rem,6vw,5rem)}
+  .hero h1{max-width:16ch;margin:.9rem 0 0;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+  .hero p{max-width:46ch;margin:1.2rem 0 1.9rem;color:#cdd4d7}
+  .btns{display:flex;gap:.7rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.85em 1.6em;border:1px solid var(--line2);cursor:pointer;transition:.25s;color:var(--text);background:transparent}
+  .btn:hover{border-color:var(--accent);background:rgba(134,171,189,.1)}
+  .btn.solid{background:var(--text);color:var(--bg);border-color:var(--text)}
+  .btn.solid:hover{background:#fff}
+
+  .tracks{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:clamp(2.5rem,6vw,4rem)}
+  .track{background:var(--bg);padding:clamp(1.6rem,3vw,2.4rem);transition:background .25s;cursor:pointer}
+  .track:hover{background:var(--surf)}
+  .track .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+  .track h3{font-family:var(--serif);font-weight:300;font-size:1.4rem;color:#fff;margin-bottom:.4rem}
+  .track p{color:var(--muted);font-size:.92rem;max-width:34ch}
+  .track .go{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text);margin-top:1rem;display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:2px}
+  @media(max-width:620px){.tracks{grid-template-columns:1fr}}
+
+  .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:clamp(.5rem,1.2vw,1rem);margin-top:2rem}
+  .tile{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer}
+  .tile .cap{position:absolute;left:0;right:0;bottom:0;padding:1rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7));opacity:0;transition:.3s}
+  .tile:hover .cap{opacity:1}
+  .tile:hover .scene{transform:scale(1.05);transition:transform .7s ease}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:clamp(1.1rem,2.4vw,1.8rem);margin-top:1.8rem}
+  .card{background:var(--surf);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s;cursor:pointer}
+  .card:hover{transform:translateY(-3px);border-color:var(--line2)}
+  .card.sold{opacity:.6}.card.sold:hover{transform:none;border-color:var(--line)}
+  .card .photo{aspect-ratio:1}
+  .sold-badge{position:absolute;left:0;top:14px;background:var(--bg);color:var(--text);font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.45em .9em;border:1px solid var(--line2);border-left:0}
+  .cbody{padding:1.05rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+  .c-cat{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .c-title{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:#fff}
+  .c-meta{font-size:.82rem;color:var(--muted)}
+  .c-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:.7rem}
+  .price{font-family:var(--mono);font-size:.95rem;color:var(--text)}
+  .buy{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;background:transparent;border:1px solid var(--line2);color:var(--text);padding:.6em 1.05em;cursor:pointer;transition:.25s}
+  .buy:hover{border-color:var(--accent);background:rgba(134,171,189,.1)}
+  .buy[disabled]{border-color:var(--line);color:var(--dim);cursor:default}
+
+  .tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+  .tab{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:transparent;border:1px solid var(--line);padding:.55em 1.1em;cursor:pointer;transition:.25s}
+  .tab:hover{color:var(--text);border-color:var(--line2)}
+  .tab.on{color:var(--bg);background:var(--text);border-color:var(--text)}
+  .craft{max-width:62ch;font-size:.92rem;color:var(--text);border-left:1px solid var(--accent);padding-left:1.2rem;margin-top:1.4rem;opacity:.9}
+
+  .digital{margin-top:2.6rem;border:1px solid var(--line);background:linear-gradient(120deg,var(--surf),var(--bg));padding:clamp(1.5rem,3vw,2.2rem);display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+  .digital .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+  .digital h3{font-family:var(--serif);font-weight:300;font-size:1.4rem;color:#fff;margin:.3rem 0}
+  .digital p{color:var(--muted);font-size:.9rem;max-width:42ch}
+  .digital .btn{margin-left:auto}
+  @media(max-width:620px){.digital .btn{margin-left:0}}
+
+  /* ===== product detail ===== */
+  .pback{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:1.8rem;cursor:pointer;display:inline-block}
+  .pback:hover{color:var(--text)}
+  .pdetail{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:start;padding:1.4rem 0 2rem}
+  @media(max-width:880px){.pdetail{grid-template-columns:1fr}}
+  .wall{position:sticky;top:90px;background:linear-gradient(160deg,#171e25,#0e141a);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:clamp(2rem,5vw,4rem);min-height:58vh}
+  @media(max-width:880px){.wall{position:static;min-height:0}}
+  .frame{transition:all .35s ease;background:#f3f1ea;padding:7%;box-shadow:0 24px 60px -22px rgba(0,0,0,.7)}
+  .frame.f-none{padding:0;background:transparent;box-shadow:0 18px 50px -20px rgba(0,0,0,.7)}
+  .frame.f-black{border:13px solid #14110e}
+  .frame.f-oak{border:13px solid #b58c5a}
+  .frame.f-white{border:13px solid #f2f0ea;box-shadow:0 24px 60px -22px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.15)}
+  .wall .photo{width:min(44vh,400px);aspect-ratio:1}
+  .info .pplace{margin-bottom:.7rem}
+  .info h1{font-size:clamp(1.9rem,4.5vw,2.7rem);margin:.3rem 0 .25rem}
+  .pedition{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+  .pdesc{color:#cdd4d7;margin:1.3rem 0;max-width:42ch}
+  .spec{border-top:1px solid var(--line);margin:1.5rem 0}
+  .spec .r{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.85rem}
+  .spec .r .l{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .spec .r .v{text-align:right;color:#fff}
+  .opt{margin:1.4rem 0}
+  .opt .lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.55rem}
+  .choices{display:flex;flex-wrap:wrap;gap:.5rem}
+  .chip{font-family:var(--mono);font-size:.72rem;background:transparent;border:1px solid var(--line2);color:var(--text);padding:.6em 1em;cursor:pointer;transition:.2s}
+  .chip:hover{border-color:var(--accent)}
+  .chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+  .chip small{color:var(--muted);margin-left:.45em}.chip.on small{color:var(--dim)}
+  .buybar{border-top:1px solid var(--line);margin-top:1.7rem;padding-top:1.4rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+  .ptotal{font-family:var(--serif);font-size:1.7rem;color:#fff}
+  .ptotal small{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;display:block}
+  .padd{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;background:var(--text);color:var(--bg);border:0;padding:1.05em 2em;cursor:pointer;margin-left:auto;transition:.2s}
+  .padd:hover{background:#fff}
+  .preassure{font-size:.78rem;color:var(--muted);margin-top:1rem;line-height:1.85}
+  .preassure b{color:#cdd4d7;font-weight:400}
+  .pstory{border-top:1px solid var(--line);padding:clamp(2rem,5vw,3.2rem) 0;max-width:62ch}
+  .pstory h2{font-size:1.5rem;margin-bottom:.7rem}.pstory p{color:#cdd4d7;margin-bottom:.9rem}
+
+  .prose{max-width:64ch}
+  .prose p{margin-bottom:1rem;color:#cdd4d7}
+  .prose h3{font-family:var(--serif);font-weight:400;color:#fff;margin:1.7rem 0 .5rem;font-size:1.25rem}
+  .prose strong{color:#fff;font-weight:400}
+  .prose ul{list-style:none;margin:.4rem 0 1rem}.prose li{padding:.25rem 0 .25rem 1.4rem;position:relative;color:#cdd4d7}.prose li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+  table{width:100%;border-collapse:collapse;margin:.6rem 0 1rem;font-size:.9rem;max-width:44ch}
+  td{padding:.5rem .4rem;border-bottom:1px solid var(--line)}td:last-child{text-align:right;color:#fff;font-family:var(--mono)}
+  .note{font-size:.8rem;color:var(--muted);border-left:1px solid var(--accent);padding-left:1rem;margin:1.1rem 0}
+  .contact-card{border:1px solid var(--line);background:var(--surf);padding:2rem;max-width:42ch;margin-top:1.6rem}
+  .contact-card .row{margin:.6rem 0;font-family:var(--mono);font-size:.84rem}.contact-card a{color:var(--accent)}
+
+  .scrim{position:fixed;inset:0;background:rgba(6,9,12,.65);opacity:0;pointer-events:none;transition:.3s;z-index:30}
+  .scrim.show{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:min(410px,93vw);z-index:31;background:var(--bg2);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+  .drawer.show{transform:none}
+  .d-head{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 1.4rem 1rem;border-bottom:1px solid var(--line)}
+  .d-head h3{font-family:var(--serif);font-weight:300;color:#fff;font-size:1.2rem}
+  .d-close{background:transparent;border:0;color:var(--muted);font-size:1.4rem;cursor:pointer}.d-close:hover{color:#fff}
+  .d-items{flex:1;overflow-y:auto;padding:.6rem 1.4rem}
+  .d-empty{color:var(--muted);font-size:.9rem;padding:2.2rem 0;text-align:center}
+  .d-row{display:flex;gap:.5rem;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.86rem}
+  .d-row .t small{color:var(--muted);display:block;font-size:.74rem;margin-top:.15rem}
+  .d-row .p{white-space:nowrap;font-family:var(--mono)}
+  .d-row button{background:transparent;border:0;color:var(--muted);cursor:pointer;margin-left:.5rem}.d-row button:hover{color:var(--accent)}
+  .d-foot{padding:1.2rem 1.4rem 1.6rem;border-top:1px solid var(--line)}
+  .zone{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:1rem}
+  .zone label{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .zone select{background:var(--surf);color:var(--text);border:1px solid var(--line2);padding:.45em .6em;font-family:var(--sans);font-size:.84rem;cursor:pointer}
+  .sum{font-size:.85rem;color:var(--muted)}.sum div{display:flex;justify-content:space-between;padding:.2rem 0}.sum .p{font-family:var(--mono)}
+  .sum .vatnote{color:var(--accent);font-size:.74rem;padding-top:.3rem}
+  .d-total{display:flex;justify-content:space-between;font-family:var(--serif);font-size:1.2rem;color:#fff;margin:.8rem 0 1.1rem;padding-top:.7rem;border-top:1px solid var(--line)}
+  .pay{display:flex;flex-direction:column;gap:.55rem}
+  .pay button{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.95em;cursor:pointer;border:1px solid var(--line2);background:transparent;color:var(--text);transition:.25s}
+  .pay .swish{background:var(--text);color:var(--bg);border-color:var(--text)}.pay .swish:hover{background:#fff}
+  .pay .paypal:hover{border-color:var(--accent)}
+  .pay-note{font-size:.7rem;color:var(--dim);margin-top:.7rem;text-align:center;font-family:var(--mono)}
+
+  .toast{position:fixed;left:50%;bottom:2rem;transform:translate(-50%,2rem);background:var(--text);color:var(--bg);font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;padding:.9em 1.5em;opacity:0;pointer-events:none;transition:.35s;z-index:40}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  footer{border-top:1px solid var(--line);padding:2.2rem 0;margin-top:2rem;color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.06em}
+  .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;justify-content:space-between;align-items:center;text-transform:uppercase}
+</style>
+</head>
+<body>
+  <header><div class="wrap hbar">
+    <span class="logo" data-view="hem">Martin Björck</span>
+    <nav>
+      <a data-view="hem" data-i18n="nav_home">Home</a>
+      <a data-view="galleri" data-i18n="nav_gallery">Gallery</a>
+      <a data-view="butik" class="active" data-i18n="nav_shop">Prints</a>
+      <a data-view="om" data-i18n="nav_about">About</a>
+      <a data-view="villkor" data-i18n="nav_terms">Terms</a>
+      <a data-view="kontakt" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="langs"><button data-lang="sv" aria-label="Svenska">🇸🇪</button><button data-lang="en" class="on" aria-label="English">🇬🇧</button></div>
+    <button class="cart-btn" id="cartBtn" aria-label="Cart">◇<span class="cart-badge" id="badge"></span></button>
+  </div></header>
+
+  <main>
+    <div class="view on" id="view-hem">
+      <div class="hero">
+        <div class="photo"><div class="scene" style="background-image:linear-gradient(175deg,#c9c6bf,#9a958c 44%,#4e4a43 70%,#2b2824)"></div><div class="grain"></div></div>
+        <div class="shade"></div>
+        <div class="hero-inner wrap">
+          <div class="eyebrow" data-i18n="hero_eyebrow">Scandinavian coast · analogue 6×6</div>
+          <h1 data-i18n="hero_title">The northern shore, on film.</h1>
+          <p data-i18n="hero_sub">Black & white photographs of the Skåne and west-coast shoreline — hand-printed in the darkroom, signed and numbered.</p>
+          <div class="btns"><button class="btn solid" data-view="butik" data-i18n="hero_cta1">View prints</button><button class="btn" data-view="galleri" data-i18n="hero_cta2">Gallery</button></div>
+        </div>
+      </div>
+      <div class="wrap"><div class="tracks">
+        <div class="track" data-view="butik">
+          <div class="k" data-i18n="track1_k">Originals</div><h3 data-i18n="track1_h">Signed silver-gelatin prints</h3>
+          <p data-i18n="track1_p">Hand-printed, numbered, limited to 30. Shipped worldwide with a certificate of authenticity.</p><span class="go" data-i18n="track1_go">Shop prints →</span>
+        </div>
+        <a class="track" href="https://www.etsy.com/shop/MartinBjorck" target="_blank" rel="noopener">
+          <div class="k" data-i18n="track2_k">Digital</div><h3 data-i18n="track2_h">Instant downloads on Etsy</h3>
+          <p data-i18n="track2_p">High-resolution files to print at home, anywhere in the world. Lower price, no shipping.</p><span class="go" data-i18n="track2_go">Open Etsy shop ↗</span>
+        </a>
+      </div></div>
+      <section class="wrap"><div class="eyebrow" data-i18n="home_featured">Featured</div><h2 data-i18n="home_featured_h">New and numbered</h2><div class="grid" id="featured"></div></section>
+    </div>
+
+    <div class="view" id="view-galleri"><section class="wrap">
+      <h1 data-i18n="gal_title">Gallery</h1>
+      <div class="sec-intro" data-i18n="gal_intro">A selection from the Scandinavian coast — Skåne, the Swedish west coast and the Nordic shore. All 6×6, on film. Select a picture to see sizes, framing and full specification.</div>
+      <div class="gal" id="gallery"></div>
+    </section></div>
+
+    <div class="view" id="view-butik"><section class="wrap">
+      <h1 data-i18n="shop_title">Prints</h1>
+      <div class="sec-intro" data-i18n="shop_intro">Signed originals, calendar, zines and cards — shipped worldwide from the darkroom.</div>
+      <div class="craft" data-i18n="craft">Shot on a Yashica Mat 6×6 and hand-developed in Rodinal. Each print is made on fibre-based baryta paper, signed and numbered — an original in a limited edition of 30.</div>
+      <div class="tabs" id="tabs">
+        <button class="tab on" data-cat="all" data-i18n="tab_all">All</button>
+        <button class="tab" data-cat="print" data-i18n="tab_print">Prints</button>
+        <button class="tab" data-cat="cal" data-i18n="tab_cal">Calendar</button>
+        <button class="tab" data-cat="zine" data-i18n="tab_zine">Zine</button>
+        <button class="tab" data-cat="card" data-i18n="tab_card">Cards</button>
+      </div>
+      <div class="grid" id="grid"></div>
+      <a class="digital" href="https://www.etsy.com/shop/MartinBjorck" target="_blank" rel="noopener">
+        <div><div class="k" data-i18n="dig_k">Prefer digital?</div><h3 data-i18n="dig_h">Download &amp; print at home</h3>
+          <p data-i18n="dig_p">The same images as high-resolution files, available worldwide on Etsy — instant, no shipping.</p></div>
+        <span class="btn" data-i18n="dig_btn">Open Etsy ↗</span>
+      </a>
+    </section></div>
+
+    <!-- PRODUCT DETAIL -->
+    <div class="view" id="view-produkt"><section class="wrap"><span class="pback" id="pback" data-i18n="back">← Back</span><div id="pdetail"></div></section></div>
+
+    <div class="view" id="view-om"><section class="wrap"><h1 data-i18n="about_title">About</h1><div class="prose" id="aboutProse"></div></section></div>
+    <div class="view" id="view-villkor"><section class="wrap"><h1 data-i18n="terms_title">Terms, shipping &amp; returns</h1><div class="prose" id="termsProse"></div></section></div>
+    <div class="view" id="view-kontakt"><section class="wrap">
+      <h1 data-i18n="contact_title">Contact</h1>
+      <div class="sec-intro" data-i18n="contact_intro">Questions about a picture, a licence or an exhibition? Get in touch.</div>
+      <div class="contact-card"><div class="row">Helsingborg · Skåne · Sweden</div><div class="row"><a href="mailto:hej@martinbjorck.se">hej@martinbjorck.se</a></div><div class="row"><a href="#">@martinbjorck</a> · <a href="https://www.etsy.com/shop/MartinBjorck" target="_blank" rel="noopener">Etsy ↗</a></div></div>
+    </section></div>
+  </main>
+
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Cart">
+    <div class="d-head"><h3 data-i18n="cart_title">Cart</h3><button class="d-close" id="closeCart">×</button></div>
+    <div class="d-items" id="cartItems"></div>
+    <div class="d-foot">
+      <div class="zone"><label for="zoneSel" data-i18n="ship_to">Ship to</label>
+        <select id="zoneSel"><option value="se" data-i18n="zone_se">Sweden</option><option value="eu" data-i18n="zone_eu">EU</option><option value="world" data-i18n="zone_world">Rest of world</option></select></div>
+      <div class="sum" id="sum"></div>
+      <div class="d-total"><span data-i18n="cart_total">Total</span><b id="cartTotal">€0</b></div>
+      <div class="pay"><button class="swish" data-i18n="pay_swish">Pay with Swish</button><button class="paypal" data-i18n="pay_paypal">Pay with PayPal</button></div>
+      <div class="pay-note" id="payNote" data-i18n="pay_note">Template — connect Swish/PayPal here.</div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">Added to cart</div>
+  <footer class="wrap"><div class="frow"><span>© <span id="yr"></span> Martin Björck — Skåne</span><span data-i18n="footer_ship">Worldwide shipping · free over €150</span><span data-i18n="footer_pay">Swish · PayPal · Etsy</span></div></footer>
+
+<script>
+const CONFIG={currency:'€',vatExempt:true,shipping:{se:5,eu:12,world:22},freeShippingOver:150};
+const SCENES=[
+  'linear-gradient(180deg,#e0ddd7,#d2cfc8 46%,#928d84 50%,#7b766c)','linear-gradient(160deg,#edebe5,#dedbd3 55%,#c4c0b7)',
+  'radial-gradient(120% 85% at 50% 16%,#b6b1a7,#6c675e 40%,#302c26)','linear-gradient(115deg,#e4e1da,#c9c4bb 46%,#8f8a80)',
+  'radial-gradient(85% 75% at 50% 44%,#e7e4dd,#c5c0b7 58%,#a39e95)','linear-gradient(180deg,#e9e6e0,#d7d3cc 42%,#bfbab1 72%,#cbc7be)',
+  'repeating-linear-gradient(176deg,rgba(246,244,239,.4) 0 2px,rgba(54,50,44,.15) 2px 6px),linear-gradient(180deg,#bbb6ad,#827c73)',
+  'radial-gradient(32% 46% at 40% 66%,#4f4a42,rgba(79,74,66,0) 64%),linear-gradient(180deg,#e3e0d9,#cbc6bd 60%,#b0aba2)',
+  'linear-gradient(122deg,#2c2822 0 36%,#eae7e0 36% 60%,#383229 60%)'
+];
+const FRAMES=[{key:'none',cls:'f-none',add:0,sv:'Oramad',en:'Unframed'},{key:'black',cls:'f-black',add:65,sv:'Svart',en:'Black'},{key:'oak',cls:'f-oak',add:80,sv:'Ek',en:'Oak'},{key:'white',cls:'f-white',add:65,sv:'Vit',en:'White'}];
+const SIZES=[{l:'20 × 20 cm',p:130},{l:'30 × 30 cm',p:190},{l:'40 × 40 cm',p:260}];
+
+/* the photographs — shown in gallery + shop (cat print), open full detail */
+const ARTWORKS=[
+  {id:'haverdal',scene:3,title:'Haverdal Dunes',camera:'Yashica Mat 6×6',
+    place:{sv:'Västkusten · Halland',en:'Swedish west coast · Halland'},loc:{sv:'Haverdal, Halland',en:'Haverdal, Halland, Sweden'},
+    long:{sv:'Vinddanade dyner på den öppna stranden vid Haverdal, norr om Halmstad. Tagen i lågt vinterljus, när gräs och sand faller in i samma mjuka gråton.',en:'Wind-shaped dunes on the open beach at Haverdal, north of Halmstad. Taken in low winter light, when the grass and sand fall into the same soft greys.'}},
+  {id:'tylosand',scene:0,title:'Tylösand, Dawn',camera:'Yashica Mat 6×6',
+    place:{sv:'Västkusten · Halland',en:'Swedish west coast · Halland'},loc:{sv:'Tylösand, Halland',en:'Tylösand, Halland, Sweden'},
+    long:{sv:'Gryning över den långa sandstranden vid Tylösand, innan dagen vaknar.',en:'Dawn over the long sand beach at Tylösand, before the day wakes.'}},
+  {id:'ringenas',scene:6,title:'Ringenäs, Low Tide',camera:'Yashica Mat 6×6',
+    place:{sv:'Västkusten · Halland',en:'Swedish west coast · Halland'},loc:{sv:'Ringenäs, Halland',en:'Ringenäs, Halland, Sweden'},
+    long:{sv:'Lågvatten vid Ringenäs, där havet drar sig tillbaka och lämnar långa speglar av blött sand.',en:'Low tide at Ringenäs, where the sea pulls back and leaves long mirrors of wet sand.'}},
+  {id:'molle',scene:4,title:'Mölle, Kullaberg',camera:'Yashica Mat 6×6',sold:true,
+    place:{sv:'Skåne · Kullaberg',en:'Skåne · Kullaberg'},loc:{sv:'Mölle, Skåne',en:'Mölle, Skåne, Sweden'},
+    long:{sv:'Dis över Kullabergs branter där det möter Öresund.',en:'Mist over the cliffs of Kullaberg where they meet the Öresund.'}},
+  {id:'kullen',scene:8,title:'Kullen, Window Light',camera:'Yashica Mat 6×6',
+    place:{sv:'Skåne · Kullaberg',en:'Skåne · Kullaberg'},loc:{sv:'Kullen, Skåne',en:'Kullen, Skåne, Sweden'},
+    long:{sv:'Ljus genom ett fönster i fyrvaktarbostaden på Kullen.',en:'Light through a window in the lighthouse keeper\u2019s house at Kullen.'}},
+  {id:'skalderviken',scene:5,title:'Skälderviken',camera:'Yashica Mat 6×6',
+    place:{sv:'Skåne · Bjärehalvön',en:'Skåne · Bjäre peninsula'},loc:{sv:'Skälderviken, Skåne',en:'Skälderviken, Skåne, Sweden'},
+    long:{sv:'Vid horisonten möter himmel och vik varandra i nästan samma ton.',en:'At the horizon the sky and the bay meet in almost the same tone.'}}
+];
+/* simpler goods — quick add, no variants */
+const GOODS=[
+  {id:'kal27',cat:'cal',scene:2,price:29,title:'Nordic Coast 2027',sv:'Väggkalender · 13 blad · 30×30 cm',en:'Wall calendar · 13 leaves · 30×30 cm'},
+  {id:'z_som',cat:'zine',scene:7,price:22,title:'A Northern Summer',sv:'Zine · 24 sidor · A5',en:'Zine · 24 pages · A5'},
+  {id:'z_bra',cat:'zine',scene:1,price:18,title:'Breaking',sv:'Zine · 16 sidor · A5',en:'Zine · 16 pages · A5'},
+  {id:'k_set',cat:'card',scene:5,price:18,title:'Postcard set — five',sv:'5 vykort · 13×13 cm',en:'5 postcards · 13×13 cm'},
+  {id:'k_gra',cat:'card',scene:0,price:5,title:'Greeting card — sea',sv:'Kort med kuvert',en:'Card with envelope'}
+];
+const ABOUT={
+  sv:`<p>Jag heter <strong>Martin Björck</strong> och fotograferar den skandinaviska kusten på analog film — Skåne, Västkusten och den nordiska stranden. Med en Yashica Mat 6×6 arbetar jag långsamt, framkallar för hand i Rodinal och kopierar i mörkrummet på fiberbaserat barytpapper.</p><p>Varje signerad print är ett original i begränsad upplaga om 30, med ett äkthetsintyg där numret matchar baksidan av kopian. Vill du hellre ha en digital fil att skriva ut själv finns bilderna på Etsy.</p><h3>Platsen</h3><p>Jag bor i Helsingborg och surfar samma kust jag fotograferar — mycket av det jag tar har jag först sett från vattnet.</p>`,
+  en:`<p>My name is <strong>Martin Björck</strong> and I photograph the Scandinavian coast on analogue film — Skåne, the Swedish west coast and the Nordic shore. With a Yashica Mat 6×6 I work slowly, develop by hand in Rodinal and print in the darkroom on fibre-based baryta paper.</p><p>Each signed print is an original in a limited edition of 30, with a certificate of authenticity whose number matches the back of the print. If you'd rather print at home, the images are available as high-resolution downloads on Etsy.</p><h3>The place</h3><p>I live in Helsingborg and surf the same coast I photograph — much of what I make I first saw from the water.</p>`
+};
+const TERMS={
+  sv:`<p class="note">Mall — stäm av mot Konsumentverket och Skatteverket innan publicering.</p><h3>Priser &amp; betalning</h3><p>Priser i euro. Betalning via <strong>Swish</strong> eller <strong>PayPal</strong>. Verksamheten är momsbefriad — ingen moms tillkommer. Utanför EU kan importmoms/tull tillkomma. Digitala filer säljs via Etsy, som hanterar moms i kundens land.</p><h3>Frakt</h3><table><tr><td>Sverige</td><td>€5</td></tr><tr><td>EU</td><td>€12</td></tr><tr><td>Övriga världen</td><td>€22</td></tr><tr><td>Fri frakt över</td><td>€150</td></tr></table><p>PostNord, 3–7 arbetsdagar. Signerade prints skickas spårbart.</p><h3>Ångerrätt</h3><p><strong>14 dagars ångerrätt</strong> enligt distansavtalslagen.</p><ul><li>Meddela via e-post.</li><li>Returnera oanvänt i originalskick.</li><li>Du står för returfrakt; återbetalning inom 14 dagar.</li></ul>`,
+  en:`<p class="note">Template — review with the consumer authority and tax agency before publishing.</p><h3>Prices &amp; payment</h3><p>Prices in euro. Payment via <strong>Swish</strong> or <strong>PayPal</strong>. The business is VAT-exempt — no VAT added. Outside the EU, import VAT/duty may apply. Digital files are sold via Etsy, which handles VAT in the buyer's country.</p><h3>Shipping</h3><table><tr><td>Sweden</td><td>€5</td></tr><tr><td>EU</td><td>€12</td></tr><tr><td>Rest of world</td><td>€22</td></tr><tr><td>Free over</td><td>€150</td></tr></table><p>PostNord, 3–7 business days. Signed prints shipped tracked.</p><h3>Returns</h3><p><strong>14-day right of withdrawal</strong> under EU distance-selling rules.</p><ul><li>Notify by e-mail.</li><li>Return unused in original condition.</li><li>You pay return shipping; refund within 14 days.</li></ul>`
+};
+const I18N={
+  sv:{nav_home:'Hem',nav_gallery:'Galleri',nav_shop:'Prints',nav_about:'Om',nav_terms:'Villkor',nav_contact:'Kontakt',
+    hero_eyebrow:'Skandinavisk kust · analogt 6×6',hero_title:'Den nordiska kusten, på film.',hero_sub:'Svartvita fotografier av Skånes och västkustens strand — kopierade för hand i mörkrummet, signerade och numrerade.',hero_cta1:'Se prints',hero_cta2:'Galleri',
+    track1_k:'Original',track1_h:'Signerade silvergelatinkopior',track1_p:'Handkopierade, numrerade, upplaga om 30. Skickas över hela världen med äkthetsintyg.',track1_go:'Till butiken →',
+    track2_k:'Digitalt',track2_h:'Direkta nedladdningar på Etsy',track2_p:'Högupplösta filer att skriva ut själv, var som helst i världen. Lägre pris, ingen frakt.',track2_go:'Öppna Etsy ↗',
+    home_featured:'Utvalt',home_featured_h:'Nytt och numrerat',
+    gal_title:'Galleri',gal_intro:'Ett urval från den skandinaviska kusten — Skåne, Västkusten och den nordiska stranden. Allt 6×6, på film. Välj en bild för storlek, ram och full specifikation.',
+    shop_title:'Prints',shop_intro:'Signerade original, kalender, zines och kort — skickas över hela världen från mörkrummet.',
+    craft:'Fotograferat på en Yashica Mat 6×6 och framkallat för hand i Rodinal. Varje print kopieras på fiberbaserat barytpapper, signeras och numreras — ett original i begränsad upplaga om 30.',
+    tab_all:'Alla',tab_cal:'Kalender',tab_print:'Prints',tab_zine:'Zine',tab_card:'Kort',
+    dig_k:'Vill du ha digitalt?',dig_h:'Ladda ner och skriv ut hemma',dig_p:'Samma bilder som högupplösta filer, globalt på Etsy — direkt, ingen frakt.',dig_btn:'Öppna Etsy ↗',
+    about_title:'Om',terms_title:'Köpvillkor, frakt & retur',contact_title:'Kontakt',contact_intro:'Frågor om en bild, en licens eller en utställning? Hör av dig.',
+    back:'← Tillbaka',l_location:'Plats',l_camera:'Kamera',l_film:'Film / framkallning',l_paper:'Papper',l_process:'Process',
+    v_film:'Svartvitt, Rodinal',v_paper:'Baryt, fiber',v_process:'Handkopierad, mörkrum',
+    o_size:'Storlek',o_frame:'Ram',p_total:'Att betala',p_add:'Lägg i varukorg',p_from:'från',p_about:'Om bilden',
+    re1:'<b>Signerad och numrerad</b> · levereras med äkthetsintyg.',re2:'<b>Världsfrakt</b>, spårbart · fri över €150 · 14 dagars öppet köp.',re3:'Vill du ha en digital fil? ',re_etsy:'Ladda ner på Etsy ↗',
+    cart_title:'Varukorg',cart_empty:'Din varukorg är tom',ship_to:'Leverans till',zone_se:'Sverige',zone_eu:'EU',zone_world:'Övriga världen',
+    subtotal:'Delsumma',shipping:'Frakt',free:'Fri',vat_incl:'varav moms',vat_exempt:'Momsbefriad — ingen moms tillkommer.',
+    cart_total:'Att betala',pay_swish:'Betala med Swish',pay_paypal:'Betala med PayPal',pay_note:'Mall — koppla Swish/PayPal här.',soldout:'Slutsåld',buy:'Köp',view:'Visa',added:'Tillagd i varukorgen',
+    footer_ship:'Världsfrakt · fri över €150',footer_pay:'Swish · PayPal · Etsy'},
+  en:{nav_home:'Home',nav_gallery:'Gallery',nav_shop:'Prints',nav_about:'About',nav_terms:'Terms',nav_contact:'Contact',
+    hero_eyebrow:'Scandinavian coast · analogue 6×6',hero_title:'The northern shore, on film.',hero_sub:'Black & white photographs of the Skåne and west-coast shoreline — hand-printed in the darkroom, signed and numbered.',hero_cta1:'View prints',hero_cta2:'Gallery',
+    track1_k:'Originals',track1_h:'Signed silver-gelatin prints',track1_p:'Hand-printed, numbered, limited to 30. Shipped worldwide with a certificate of authenticity.',track1_go:'Shop prints →',
+    track2_k:'Digital',track2_h:'Instant downloads on Etsy',track2_p:'High-resolution files to print at home, anywhere in the world. Lower price, no shipping.',track2_go:'Open Etsy shop ↗',
+    home_featured:'Featured',home_featured_h:'New and numbered',
+    gal_title:'Gallery',gal_intro:'A selection from the Scandinavian coast — Skåne, the Swedish west coast and the Nordic shore. All 6×6, on film. Select a picture to see sizes, framing and full specification.',
+    shop_title:'Prints',shop_intro:'Signed originals, calendar, zines and cards — shipped worldwide from the darkroom.',
+    craft:'Shot on a Yashica Mat 6×6 and hand-developed in Rodinal. Each print is made on fibre-based baryta paper, signed and numbered — an original in a limited edition of 30.',
+    tab_all:'All',tab_cal:'Calendar',tab_print:'Prints',tab_zine:'Zine',tab_card:'Cards',
+    dig_k:'Prefer digital?',dig_h:'Download & print at home',dig_p:'The same images as high-resolution files, available worldwide on Etsy — instant, no shipping.',dig_btn:'Open Etsy ↗',
+    about_title:'About',terms_title:'Terms, shipping & returns',contact_title:'Contact',contact_intro:'Questions about a picture, a licence or an exhibition? Get in touch.',
+    back:'← Back',l_location:'Location',l_camera:'Camera',l_film:'Film / dev',l_paper:'Paper',l_process:'Process',
+    v_film:'Black & white, Rodinal',v_paper:'Fibre-based baryta',v_process:'Hand-printed, darkroom',
+    o_size:'Size',o_frame:'Frame',p_total:'Total',p_add:'Add to cart',p_from:'from',p_about:'About this picture',
+    re1:'<b>Signed and numbered</b> · ships with a certificate of authenticity.',re2:'<b>Worldwide shipping</b>, tracked · free over €150 · 14-day returns.',re3:'Prefer a digital file? ',re_etsy:'Download on Etsy ↗',
+    cart_title:'Cart',cart_empty:'Your cart is empty',ship_to:'Ship to',zone_se:'Sweden',zone_eu:'EU',zone_world:'Rest of world',
+    subtotal:'Subtotal',shipping:'Shipping',free:'Free',vat_incl:'incl. VAT',vat_exempt:'VAT-exempt — no VAT added.',
+    cart_total:'Total',pay_swish:'Pay with Swish',pay_paypal:'Pay with PayPal',pay_note:'Template — connect Swish/PayPal here.',soldout:'Sold out',buy:'Buy',view:'View',added:'Added to cart',
+    footer_ship:'Worldwide shipping · free over €150',footer_pay:'Swish · PayPal · Etsy'}
+};
+
+let lang='en',filter='all',zone='se';const cart={};
+const $=s=>document.querySelector(s);const C=CONFIG.currency,money=n=>C+(Math.round(n*100)/100);
+const L=()=>I18N[lang];
+const photoHTML=(sc,ex='')=>`<div class="scene" style="background-image:${SCENES[sc]}"></div><div class="grain"></div><div class="vig"></div><span class="fmt">6×6</span>${ex}`;
+const minPrice=a=>Math.min(...SIZES.map(s=>s.p));
+
+function show(v){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='view-'+v));
+  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===v));
+  window.scrollTo({top:0,behavior:'smooth'});if(v!=='produkt')location.hash=v;}
+document.body.addEventListener('click',e=>{const el=e.target.closest('[data-view]');if(el){show(el.dataset.view);}});
+
+function applyLang(){document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=L()[el.dataset.i18n];if(v!=null)el.innerHTML=v;});
+  document.querySelectorAll('#zoneSel option').forEach(o=>{const v=L()[o.dataset.i18n];if(v)o.textContent=v;});
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang));
+  $('#aboutProse').innerHTML=ABOUT[lang];$('#termsProse').innerHTML=TERMS[lang];
+  renderGrid();renderFeatured();renderGallery();renderCart();}
+
+/* cards */
+function artCard(a){const badge=a.sold?`<div class="sold-badge">${L().soldout}</div>`:'';
+  return `<article class="card${a.sold?' sold':''}" data-art="${a.id}"><div class="photo">${photoHTML(a.scene,badge)}</div>
+    <div class="cbody"><div class="c-cat">${L().tab_print}</div><div class="c-title">${a.title}</div><div class="c-meta">${a.place[lang]}</div>
+    <div class="c-foot"><span class="price">${L().p_from} ${money(minPrice(a))}</span><span class="buy">${a.sold?L().soldout:L().view}</span></div></div></article>`;}
+function goodCard(g){return `<article class="card" data-good="${g.id}"><div class="photo">${photoHTML(g.scene)}</div>
+    <div class="cbody"><div class="c-cat">${L()['tab_'+g.cat]}</div><div class="c-title">${g.title}</div><div class="c-meta">${g[lang]}</div>
+    <div class="c-foot"><span class="price">${money(g.price)}</span><button class="buy" data-addgood="${g.id}">${L().buy}</button></div></div></article>`;}
+
+function shopList(){
+  if(filter==='print')return ARTWORKS.map(artCard).join('');
+  if(filter==='all')return ARTWORKS.map(artCard).join('')+GOODS.map(goodCard).join('');
+  return GOODS.filter(g=>g.cat===filter).map(goodCard).join('');
+}
+function wire(root){
+  root.querySelectorAll('[data-art]').forEach(c=>c.addEventListener('click',()=>openDetail(c.dataset.art)));
+  root.querySelectorAll('[data-addgood]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation();const g=GOODS.find(x=>x.id===b.dataset.addgood);addToCart(g.id,g.title,g[lang],g.price);}));
+}
+function renderGrid(){$('#grid').innerHTML=shopList();wire($('#grid'));}
+function renderFeatured(){$('#featured').innerHTML=[artCard(ARTWORKS[2]),artCard(ARTWORKS[0]),goodCard(GOODS[0])].join('');wire($('#featured'));}
+function renderGallery(){$('#gallery').innerHTML=ARTWORKS.map(a=>`<div class="tile" data-art="${a.id}"><div class="photo" style="position:absolute;inset:0">${photoHTML(a.scene)}</div><div class="cap">${a.title} · ${a.place[lang]}</div></div>`).join('');
+  $('#gallery').querySelectorAll('[data-art]').forEach(t=>t.addEventListener('click',()=>openDetail(t.dataset.art)));}
+
+/* ===== product detail ===== */
+let sel={art:null,sizeIdx:0,frameIdx:0};
+function openDetail(id){const a=ARTWORKS.find(x=>x.id===id);if(!a)return;sel={art:a,sizeIdx:0,frameIdx:0};renderDetail();show('produkt');}
+function renderDetail(){
+  const a=sel.art,t=L();
+  const sizes=SIZES.map((s,i)=>`<button class="chip${i===sel.sizeIdx?' on':''}" data-si="${i}">${s.l}<small>${money(s.p)}</small></button>`).join('');
+  const frames=FRAMES.map((f,i)=>`<button class="chip${i===sel.frameIdx?' on':''}" data-fi="${i}">${f[lang]}${f.add?`<small>+${money(f.add)}</small>`:''}</button>`).join('');
+  const total=SIZES[sel.sizeIdx].p+FRAMES[sel.frameIdx].add;
+  $('#pdetail').innerHTML=`<div class="pdetail">
+    <div class="wall"><div class="frame ${FRAMES[sel.frameIdx].cls}" id="frame"><div class="photo" style="position:relative"><div class="scene" role="img" aria-label="${a.title} — black and white photograph, ${a.loc.en}" style="background-image:${SCENES[a.scene]}"></div><div class="grain"></div></div></div></div>
+    <div class="info">
+      <div class="eyebrow pplace">${a.place[lang]}</div>
+      <h1>${a.title}</h1>
+      <div class="pedition">${t.craft?'':''}${lang==='sv'?'Silvergelatin · upplaga 30':'Silver gelatin · edition of 30'}${a.sold?' · '+t.soldout:''}</div>
+      <p class="pdesc">${a.long[lang]}</p>
+      <div class="spec">
+        <div class="r"><span class="l">${t.l_location}</span><span class="v">${a.loc[lang]}</span></div>
+        <div class="r"><span class="l">${t.l_camera}</span><span class="v">${a.camera}</span></div>
+        <div class="r"><span class="l">${t.l_film}</span><span class="v">${t.v_film}</span></div>
+        <div class="r"><span class="l">${t.l_paper}</span><span class="v">${t.v_paper}</span></div>
+        <div class="r"><span class="l">${t.l_process}</span><span class="v">${t.v_process}</span></div>
+      </div>
+      <div class="opt"><div class="lab">${t.o_size}</div><div class="choices" id="psizes">${sizes}</div></div>
+      <div class="opt"><div class="lab">${t.o_frame}</div><div class="choices" id="pframes">${frames}</div></div>
+      <div class="buybar"><div class="ptotal"><small>${t.p_total}</small><span id="ptotal">${money(total)}</span></div>
+        <button class="padd" id="padd"${a.sold?' disabled style="opacity:.5;cursor:default"':''}>${a.sold?t.soldout:t.p_add}</button></div>
+      <div class="preassure">${t.re1}<br>${t.re2}<br>${t.re3}<a href="https://www.etsy.com/shop/MartinBjorck" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line2)">${t.re_etsy}</a></div>
+    </div></div>
+    <div class="pstory"><h2>${t.p_about}</h2><p>${a.long[lang]}</p></div>`;
+  $('#psizes').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;sel.sizeIdx=+c.dataset.si;renderDetail();});
+  $('#pframes').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;sel.frameIdx=+c.dataset.fi;renderDetail();});
+  if(!a.sold)$('#padd').addEventListener('click',()=>{
+    const s=SIZES[sel.sizeIdx],f=FRAMES[sel.frameIdx];
+    addToCart(`${a.id}|${sel.sizeIdx}|${f.key}`,a.title,`${s.l} · ${f[lang]}`,s.p+f.add);toast();});
+}
+$('#pback').addEventListener('click',()=>show('butik'));
+
+/* tabs / lang / zone */
+$('#tabs').addEventListener('click',e=>{const t=e.target.closest('.tab');if(!t)return;filter=t.dataset.cat;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));renderGrid();});
+document.querySelector('.langs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;lang=b.dataset.lang;applyLang();if($('#view-produkt').classList.contains('on'))renderDetail();});
+$('#zoneSel').addEventListener('change',e=>{zone=e.target.value;renderCart();});
+
+/* cart (variant-aware) */
+function addToCart(key,title,meta,price){if(cart[key])cart[key].qty++;else cart[key]={title,meta,price,qty:1};renderCart();openCart();}
+function removeFromCart(key){if(cart[key]){cart[key].qty--;if(cart[key].qty<=0)delete cart[key];}renderCart();}
+function renderCart(){const keys=Object.keys(cart);$('#badge').textContent=keys.reduce((s,k)=>s+cart[k].qty,0)||'';
+  if(!keys.length){$('#cartItems').innerHTML=`<div class="d-empty">${L().cart_empty}</div>`;$('#sum').innerHTML='';$('#cartTotal').textContent=money(0);return;}
+  let st=0;$('#cartItems').innerHTML=keys.map(k=>{const e=cart[k],sub=e.price*e.qty;st+=sub;
+    return `<div class="d-row"><span class="t">${e.title}<small>${e.meta} · ×${e.qty}</small></span><span class="p">${money(sub)}<button data-rm="${k}">✕</button></span></div>`;}).join('');
+  $('#cartItems').querySelectorAll('[data-rm]').forEach(b=>b.addEventListener('click',()=>removeFromCart(b.dataset.rm)));
+  const sh=st>=CONFIG.freeShippingOver?0:CONFIG.shipping[zone],tot=st+sh,t=L();
+  let s=`<div><span>${t.subtotal}</span><span class="p">${money(st)}</span></div><div><span>${t.shipping}</span><span class="p">${sh===0?t.free:money(sh)}</span></div><div class="vatnote">${t.vat_exempt}</div>`;
+  $('#sum').innerHTML=s;$('#cartTotal').textContent=money(tot);}
+function openCart(){$('#drawer').classList.add('show');$('#scrim').classList.add('show');}
+function closeCart(){$('#drawer').classList.remove('show');$('#scrim').classList.remove('show');}
+$('#cartBtn').addEventListener('click',openCart);$('#closeCart').addEventListener('click',closeCart);$('#scrim').addEventListener('click',closeCart);
+document.querySelectorAll('.pay button').forEach(b=>b.addEventListener('click',()=>{$('#payNote').textContent=lang==='sv'?'Demo: koppla din riktiga betalning här.':'Demo: connect your real payment here.';}));
+function toast(){const t=$('#toast');t.textContent=L().added;t.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(()=>t.classList.remove('show'),1700);}
+
+$('#yr').textContent=new Date().getFullYear();
+const q=new URLSearchParams(location.search).get('lang');if(q==='sv')lang='sv';
+applyLang();
+const start=(location.hash||'#hem').slice(1);
+show(['hem','galleri','butik','om','villkor','kontakt'].includes(start)?start:'hem');
+</script>
+</body>
+</html>
