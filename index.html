@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Martin Björck — Scandinavian Coastal Photography</title>
+<meta name="robots" content="noindex"><!-- DEMO: remove at launch, then set correct canonical below -->
 <meta name="description" content="Analogue black & white photography of the Scandinavian coast — Skåne, the Swedish west coast and the Nordic shore. Signed silver-gelatin prints, shipped worldwide. Digital downloads on Etsy.">
-<link rel="canonical" href="https://martinbjk.github.io/MartinBjorckPhotos/">
-<link rel="alternate" hreflang="en" href="https://martinbjk.github.io/MartinBjorckPhotos/?lang=en">
-<link rel="alternate" hreflang="sv" href="https://martinbjk.github.io/MartinBjorckPhotos/?lang=sv">
+<link rel="canonical" href="https://martinbjk.github.io/MartinBjorckWebEPHOTO/">
+<link rel="alternate" hreflang="en" href="https://martinbjk.github.io/MartinBjorckWebEPHOTO/?lang=en">
+<link rel="alternate" hreflang="sv" href="https://martinbjk.github.io/MartinBjorckWebEPHOTO/?lang=sv">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Martin Björck — Scandinavian Coastal Photography">
 <meta property="og:description" content="Analogue black & white prints of the Nordic coast. Signed silver-gelatin originals, shipped worldwide.">
@@ -479,19 +480,18 @@ function renderGallery(){$('#gallery').innerHTML=ARTWORKS.map(a=>`<div class="ti
   $('#gallery').querySelectorAll('[data-art]').forEach(t=>t.addEventListener('click',()=>openDetail(t.dataset.art)));}
 
 /* ===== product detail ===== */
-let sel={art:null,sizeIdx:0,frameIdx:0};
-function openDetail(id){const a=ARTWORKS.find(x=>x.id===id);if(!a)return;sel={art:a,sizeIdx:0,frameIdx:0};renderDetail();show('produkt');}
+let sel={art:null,sizeIdx:0};
+function openDetail(id){const a=ARTWORKS.find(x=>x.id===id);if(!a)return;sel={art:a,sizeIdx:0};renderDetail();show('produkt');}
 function renderDetail(){
   const a=sel.art,t=L();
   const sizes=SIZES.map((s,i)=>`<button class="chip${i===sel.sizeIdx?' on':''}" data-si="${i}">${s.l}<small>${money(s.p)}</small></button>`).join('');
-  const frames=FRAMES.map((f,i)=>`<button class="chip${i===sel.frameIdx?' on':''}" data-fi="${i}">${f[lang]}${f.add?`<small>+${money(f.add)}</small>`:''}</button>`).join('');
-  const total=SIZES[sel.sizeIdx].p+FRAMES[sel.frameIdx].add;
+  const total=SIZES[sel.sizeIdx].p;
   $('#pdetail').innerHTML=`<div class="pdetail">
-    <div class="wall"><div class="frame ${FRAMES[sel.frameIdx].cls}" id="frame"><div class="photo" style="position:relative"><div class="scene" role="img" aria-label="${a.title} — black and white photograph, ${a.loc.en}" style="background-image:${SCENES[a.scene]}"></div><div class="grain"></div></div></div></div>
+    <div class="wall"><div class="frame f-none" id="frame"><div class="photo" style="position:relative"><div class="scene" role="img" aria-label="${a.title} — black and white photograph, ${a.loc.en}" style="background-image:${SCENES[a.scene]}"></div><div class="grain"></div></div></div></div>
     <div class="info">
       <div class="eyebrow pplace">${a.place[lang]}</div>
       <h1>${a.title}</h1>
-      <div class="pedition">${t.craft?'':''}${lang==='sv'?'Silvergelatin · upplaga 30':'Silver gelatin · edition of 30'}${a.sold?' · '+t.soldout:''}</div>
+      <div class="pedition">${lang==='sv'?'Silvergelatin · upplaga 30':'Silver gelatin · edition of 30'}${a.sold?' · '+t.soldout:''}</div>
       <p class="pdesc">${a.long[lang]}</p>
       <div class="spec">
         <div class="r"><span class="l">${t.l_location}</span><span class="v">${a.loc[lang]}</span></div>
@@ -501,17 +501,15 @@ function renderDetail(){
         <div class="r"><span class="l">${t.l_process}</span><span class="v">${t.v_process}</span></div>
       </div>
       <div class="opt"><div class="lab">${t.o_size}</div><div class="choices" id="psizes">${sizes}</div></div>
-      <div class="opt"><div class="lab">${t.o_frame}</div><div class="choices" id="pframes">${frames}</div></div>
       <div class="buybar"><div class="ptotal"><small>${t.p_total}</small><span id="ptotal">${money(total)}</span></div>
         <button class="padd" id="padd"${a.sold?' disabled style="opacity:.5;cursor:default"':''}>${a.sold?t.soldout:t.p_add}</button></div>
       <div class="preassure">${t.re1}<br>${t.re2}<br>${t.re3}<a href="https://www.etsy.com/shop/MartinBjorck" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line2)">${t.re_etsy}</a></div>
     </div></div>
     <div class="pstory"><h2>${t.p_about}</h2><p>${a.long[lang]}</p></div>`;
   $('#psizes').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;sel.sizeIdx=+c.dataset.si;renderDetail();});
-  $('#pframes').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;sel.frameIdx=+c.dataset.fi;renderDetail();});
   if(!a.sold)$('#padd').addEventListener('click',()=>{
-    const s=SIZES[sel.sizeIdx],f=FRAMES[sel.frameIdx];
-    addToCart(`${a.id}|${sel.sizeIdx}|${f.key}`,a.title,`${s.l} · ${f[lang]}`,s.p+f.add);toast();});
+    const s=SIZES[sel.sizeIdx];
+    addToCart(`${a.id}|${sel.sizeIdx}`,a.title,`${s.l}`,s.p);toast();});
 }
 $('#pback').addEventListener('click',()=>show('butik'));
 
